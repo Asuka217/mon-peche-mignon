@@ -17,8 +17,10 @@ class User < ApplicationRecord
     validates :age
     validates :figure
   end
-  
+
   validates :sex_id, numericality: { other_than: 1 }
   validates :age_id, numericality: { other_than: 1 }
   validates :figure_id, numericality: { other_than: 1 }
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+  validates_format_of :password, with: PASSWORD_REGEX
 end
