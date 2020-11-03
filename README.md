@@ -1,24 +1,53 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+* DB設計
 
-* System dependencies
+## usersテーブル
 
-* Configuration
+| Column          | Type    | Options     |
+| --------------- | ------- | ----------- |
+| nickname        | string  | null: false |
+| email           | string  | null: false |
+| password        | string  | null: false |
+| sex             | integer | null: false |
+| age             | integer | null: false |
+| figure          | integer | null: false |
 
-* Database creation
+### Association
 
-* Database initialization
+- has_many :trainings
+- belongs_to_active_hash :sex
+- belongs_to_active_hash :age
+- belongs_to_active_hash :figure
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## trainingsテーブル
 
-* Deployment instructions
+| Column | Type       | Options     |
+| ------ | ---------- | ----------- |
+| goal   | text       | null: false |
+| reward | string     | null: false |
+| period | integer    | null: false |
+| user   | references | foreign_key |
 
-* ...
+### Association
+
+- belongs_to :user
+- has_one :achievement
+- belongs_to_active_hash :period
+
+
+## achievement
+
+| Column   | Type       | Options     |
+| -------- | ---------- | ----------- |
+| result   | text       | null: false |
+| period   | integer    | null: false |
+| training | references | foreign_key |
+
+## Association
+
+- belongs_to :training
+- belongs_to_active_hash :period
