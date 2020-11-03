@@ -11,9 +11,9 @@
 | nickname        | string  | null: false |
 | email           | string  | null: false |
 | password        | string  | null: false |
-| sex             | integer | null: false |
-| age             | integer | null: false |
-| figure          | integer | null: false |
+| sex_id          | integer | null: false |
+| age_id          | integer | null: false |
+| figure_id       | integer | null: false |
 
 ### Association
 
@@ -25,12 +25,12 @@
 
 ## trainingsテーブル
 
-| Column | Type       | Options     |
-| ------ | ---------- | ----------- |
-| goal   | text       | null: false |
-| reward | string     | null: false |
-| period | integer    | null: false |
-| user   | references | foreign_key |
+| Column    | Type       | Options     |
+| --------- | ---------- | ----------- |
+| goal      | text       | null: false |
+| reward    | string     | null: false |
+| period_id | integer    | null: false |
+| user      | references | foreign_key |
 
 ### Association
 
@@ -41,11 +41,11 @@
 
 ## achievement
 
-| Column   | Type       | Options     |
-| -------- | ---------- | ----------- |
-| result   | text       | null: false |
-| period   | integer    | null: false |
-| training | references | foreign_key |
+| Column    | Type       | Options     |
+| --------- | ---------- | ----------- |
+| result    | text       | null: false |
+| period_id | integer    | null: false |
+| training  | references | foreign_key |
 
 ## Association
 
