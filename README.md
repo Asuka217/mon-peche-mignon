@@ -1,6 +1,25 @@
 # README
 
+* アプリケーション名
 
+Mon péché mignon
+(モン　ペッシェ　ミニョン)
+
+* アプリケーション概要
+
+* URL
+
+* テスト用のアカウント
+
+* 利用方法
+
+* 目指した課題解決
+
+* 洗い出した要件定義
+
+* 実装した機能についての説明(GIF添付)
+
+* 実装予定の機能
 
 * DB設計
 
@@ -25,12 +44,12 @@
 
 ## trainingsテーブル
 
-| Column    | Type       | Options     |
-| --------- | ---------- | ----------- |
-| goal      | text       | null: false |
-| reward    | string     | null: false |
-| period_id | integer    | null: false |
-| user      | references | foreign_key |
+| Column     | Type       | Options     |
+| ---------- | ---------- | ----------- |
+| goal       | text       | null: false |
+| reward     | string     | null: false |
+| date_start | date    | null: false |
+| user       | references | foreign_key |
 
 ### Association
 
@@ -51,3 +70,8 @@
 
 - belongs_to :training
 - belongs_to_active_hash :period
+
+
+* ローカルでの動作方法
+
+
