@@ -21,10 +21,12 @@
   <div class="top-contents">
     <ul class="upper-contents">
       <li class="content">
-        概要
+        Object
       </li>
       <li> <%= link_to '意気込み！', "#", class: "content" %> </li>
-      <li><%= link_to 'My page', '#', class: "content" %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to 'My page', user_path(current_user.id) , class: "content" %></li>
+      <% end %>
       <li><%= link_to 'Comming soon...', "#", class: "content" %></li>
     </ul>
     <span class="explain">
@@ -34,18 +36,18 @@
       <br>でも、長続きしない…という皆様。</br>
       このサイトでは、筋トレの目標を設定して、達成したら各自が設定したごほうびを獲得して達成感を喜びをわかちあいましょう！
       <br>(※設定したごほうびは、各自で調達してください…)</br>
-      <%= link_to 'new', new_training_path %>
     </span>
     <div class="main-contents">
       <li class="menu">
         <%= link_to '#' do %>
-         <%= image_tag "https://www.pakutaso.com/shared/img/thumb/YAT201262066_TP_V.jpg", class: "reward-img" %>
+         <%= image_tag "https://www.pakutaso.com/shared/img/thumb/YAT201262066_TP_V.jpg", class: "demo-img" %>
          <div class='goal-comment'>
           達成しました〜！ごほうびのランチ❤︎
          </div>
       </li>
         <% end %>
     </div>
+
   </div>
 </body>
 
