@@ -1,0 +1,28 @@
+.training-goal-format {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.goal-title {
+  padding-top: 20px;
+  margin-left: 20px;
+}
+
+.img-upload {
+  margin-left: 20px;
+}
+
+.new-goals {
+  margin-left: 20px;
+}
+
+.new-goal-btn {
+  padding-top: 20px;
+  margin-left: 20px;
+}
+
+.back-btn {
+  display: block;
+  padding-top: 20px;
+}

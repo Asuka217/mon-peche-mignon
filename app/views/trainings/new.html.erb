@@ -1,0 +1,44 @@
+<div class="training-goal-format">
+  <h2 class="goal-title">筋トレ目標を設定してください</h2>
+  <%= form_with model: @training, url: trainings_path, local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="img-upload">
+      <div class="goal-title">
+        ごほうび画像を設定してください
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"training-reward"%>
+      </div>
+    </div>
+    <%# 入力フォーム %>
+    <div class="new-goals">
+      <div class="goal-title">
+        筋トレ目標
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :goal, class:"trainig-goal", id:"training-goal", placeholder:"筋トレ目標" %>
+      <div class="goal-title">
+        ごほうびを記入
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :reward, class:"training-reward", id:"training-reward", placeholder:"ごほうび設定"%>
+      <div class="start-time">
+        開始日を選択してください
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.date_field :date_start, class:"training-start", id:"training-start", placeholder:"開始日選択"%>
+    </div>
+    <%# ここまで入力フォーム %>
+    <%# 送信ボタン %>
+    <div class="new-goal-btn">
+      <%= f.submit "設定する" ,class:"goal-btn" %>
+      <%=link_to 'TOP', root_path, class:"back-btn" %>
+    </div>
+  　<%# 送信ボタン %>
+  <% end %>
+</div>

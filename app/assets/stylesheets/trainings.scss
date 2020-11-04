@@ -10,17 +10,69 @@
 .app-title {
   font-size: 30px;
   font-family: fantasy;
-
+  padding: 20px 0 ;
 }
 
 .right-header {
-  align-items: flex-end;
+
 }
 
 .lists {
-  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  color: palevioletred;
+  text-decoration: none;
+}
+
+.login {
+  text-decoration: none;
+  color: palevioletred;
+}
+
+.logout {
+  text-decoration: none;
+  color: palevioletred;
+  padding: 0 20px;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: palevioletred;
+  padding: 0 20px;
 }
 
 .user-nickname {
   text-decoration: none;
+  color: palevioletred;
 }
+
+// コンテンツ部分
+
+.top-contents {
+  padding-top: 20px;
+}
+
+.upper-contents {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.content {
+  text-decoration: none;
+  font-family: fantasy;
+  color: aquamarine;
+}
+
+.explain {
+  display: block;
+  border: 1px solid white;
+  margin: 50px;
+}
+
+
+.reward-img {
+  width: 22wh;
+  height: 22vh;
+}
+
