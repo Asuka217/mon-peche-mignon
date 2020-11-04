@@ -6,6 +6,7 @@ class Training < ApplicationRecord
     validates :goal
     validates :reward
     validates :date_start
+    validates :image
   end
 
 end
