@@ -2,6 +2,7 @@ class TrainingsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
+    @trainings = Training.all
   end
 
   def new
@@ -17,13 +18,10 @@ class TrainingsController < ApplicationController
     end
   end
 
-  def show
-  end
-
   private
 
   def training_params
-    params.require(:training).permit(:goal, :reward, :date_start).merge(user_id: current_user.id)
+    params.require(:training).permit(:goal, :reward, :date_start, :image).merge(user_id: current_user.id)
   end
 
 end

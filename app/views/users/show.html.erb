@@ -1,0 +1,17 @@
+<div class="my-page-header">
+  <div class="user-contents">
+    <div class="user-nickname">
+      <%= "#{current_user.nickname}さんのマイページ"%>
+    </div>
+    <div class="user-tables">
+      <ul>
+        <li><%= link_to 'New', new_training_path, class:"new-link" %></li>
+        <li><%= "#{current_user.nickname}さんの筋トレ目標はこちら"%></li>
+      </ul>
+    </div>
+  </div>
+</div>
+  <%=link_to 'TOP', root_path, class:"back-btn" %>
+  <% if @user.trainings.present? %>
+    <%= render partial: 'trainings/training', collection: @trainings %>
+  <% end %>

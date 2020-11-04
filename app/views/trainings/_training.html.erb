@@ -1,0 +1,17 @@
+<div class="my-page-contents">
+  <div class='training-img-content'>
+    <%= link_to image_tag(training.image, class: "reward-img"), "#" %>
+  </div>
+  <div class='training-info'>
+      <h3 class='training-goal'>
+        <%= training.goal %>
+      </h3>
+    <div class='training-reward'>
+      <%= training.reward %>
+    </div>
+    <div class="training-start">
+      <%= training.date_start %>
+    </div>
+  </div>
+</div>
+
