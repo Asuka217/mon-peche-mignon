@@ -1,5 +1,9 @@
 .top-page-header {
   width: 100wh;
+  height: 22vh;
+  padding: 0.5em 1em;
+    background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+    background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
 }
 
 .header-title {
@@ -10,7 +14,7 @@
 .app-title {
   font-size: 30px;
   font-family: fantasy;
-  padding: 20px 0 ;
+  padding: 40px 0 ;
 }
 
 .right-header {
@@ -21,7 +25,7 @@
   display: flex;
   justify-content: flex-end;
   color: palevioletred;
-  text-decoration: none;
+  list-style-type: none;
 }
 
 .login {
@@ -41,21 +45,18 @@
   padding: 0 20px;
 }
 
-.user-nickname {
+.top-user-nickname {
   text-decoration: none;
   color: palevioletred;
 }
 
-// コンテンツ部分
-
-.top-contents {
-  padding-top: 20px;
-}
-
-.upper-contents {
+.nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding-top: 20px;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 .content {
@@ -64,15 +65,42 @@
   color: aquamarine;
 }
 
+// コンテンツ部分
+
+.top-contents {
+  padding-top: 20px;
+  background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+  background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+  height: 66vh;
+  width: 80wh;
+}
+
+.demo-pub {
+  list-style-type: none;
+  text-decoration: none;
+  padding-left: 20px;
+}
+
 .explain {
   display: block;
   border: 1px solid white;
-  margin: 50px;
+  margin: 30px;
 }
-
 
 .demo-img {
-  width: 10wh;
-  height: 10vh;
+  padding-left: 30px;
+  width: 33wh;
+  height: 20vh;
 }
 
+// コンテンツ部分(ここまで)
+
+.inc {
+  color: black;
+  display: flex;
+  justify-content: center;
+  background: -webkit-repeating-linear-gradient(-45deg, #fffccc, #fffccc 3px,white 3px, white 7px);
+  background: repeating-linear-gradient(-45deg, #fffccc, #fffccc 3px,white 3px, white 7px);
+  height: 60px;
+  padding-top: 20px;
+}
