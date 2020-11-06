@@ -1,17 +1,8 @@
-<%= render 'shared/header'%>
+<%= render 'shared/header' %>
 
 <body>
   <div class="top-contents">
-    <ul class="upper-contents">
-      <li class="content">
-        Object
-      </li>
-      <li> <%= link_to '意気込み！', "#", class: "content" %> </li>
-      <% if user_signed_in? %>
-        <li><%= link_to 'My page', user_path(current_user.id) , class: "content" %></li>
-      <% end %>
-      <li><%= link_to 'Comming soon...', "#", class: "content" %></li>
-    </ul>
+
     <span class="explain">
       <p>概要</p>
       このサイトは、運動不足解消、このご時世で在宅になって出歩かなくなった…
@@ -21,18 +12,16 @@
       <br>(※設定したごほうびは、各自で調達してください…)</br>
     </span>
     <div class="main-contents">
-      <li class="menu">
-        <%= link_to '#' do %>
+    <%# 達成した際の公開コメントを表示させる%>
+      <div class="demo-pub">
          <%= image_tag '/images/test_image.png', class: "demo-img" %>
-         <div class='goal-comment'>
-          達成しました〜！ごほうびのランチ❤︎
-         </div>
-      </li>
-        <% end %>
+          <div class='goal-comment'>
+            達成しました〜！ごほうびのランチ❤︎
+          </div>
+      </div>
     </div>
-
+  <%# 達成した際のコメント(ここまで) %>
   </div>
 </body>
 
-<footer>
-</footer>
+<%= render 'shared/footer' %>

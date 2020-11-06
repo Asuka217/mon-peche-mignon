@@ -1,15 +1,17 @@
 <div class="training-goal-format">
   <h2 class="goal-title">筋トレ目標を設定してください</h2>
+  <%= form_with model: @training, url: training_path(@training), local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
     <div class="form">
-      <%= form_with model: @training, url: trainings_path, local: true do |f| %>
-      <%= render 'shared/error_messages', model: f.object %>
-
       <div class="img-upload">
         <div class="goal-title">
           ごほうび画像を設定してください
           <span class="indispensable">必須</span>
         </div>
         <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
           <%= f.file_field :image, id:"training-reward"%>
         </div>
       </div>
@@ -19,27 +21,25 @@
           筋トレ目標
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :goal, class:"training-goal", id:"training-goal", placeholder:"スクワットを1日30回、3セットとストレッチをやる！" %>
+        <%= f.text_area :goal, class:"trainig-goal", id:"training-goal", placeholder:"筋トレ目標" %>
         <div class="goal-title">
           ごほうびを記入
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :reward, class:"training-reward", id:"training-reward", placeholder:"○○のパフェを食べる！"%>
+        <%= f.text_area :reward, class:"training-reward", id:"training-reward", placeholder:"ごほうび設定"%>
         <div class="start-time">
           開始日を選択してください
           <span class="indispensable">必須</span>
         </div>
-        <%= f.date_field :date_start, class:"training-start", id:"training-start"%>
+        <%= f.date_field :date_start, class:"training-start", id:"training-start", placeholder:"開始日選択"%>
       </div>
       <%# ここまで入力フォーム %>
       <%# 送信ボタン %>
       <div class="new-goal-btn">
         <%= f.submit "設定する" ,class:"goal-btn" %>
-
+        <%=link_to 'TOP', root_path, class:"back-btn" %>
       </div>
       <%# 送信ボタン %>
     </div>
-    <%=link_to 'TOP', root_path, class:"back-btn" %>
   <% end %>
 </div>
-  <%= render 'shared/footer' %>

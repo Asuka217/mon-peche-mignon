@@ -1,17 +1,19 @@
 <div class="my-page-contents">
-  <div class='training-img-content'>
-    <%= link_to image_tag(training.image, class: "reward-img"), "#" %>
-  </div>
-  <div class='training-info'>
-      <h3 class='training-goal'>
+  <div class="my-page-content">
+    <div class='training-img-content'>
+      <%= link_to image_tag(training.image, class: "reward-img"), "#" %>
+    </div>
+    <div class='training-goal'>
         <%= training.goal %>
-      </h3>
+    </div>
     <div class='training-reward'>
       <%= training.reward %>
     </div>
     <div class="training-start">
       <%= training.date_start %>
     </div>
+    <%= link_to '編集', edit_training_path(training.id) %>
+    <%= link_to '削除', training_path(training.id), method: :delete %>
   </div>
 </div>
 

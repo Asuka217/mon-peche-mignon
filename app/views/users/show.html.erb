@@ -5,13 +5,16 @@
     </div>
     <div class="user-tables">
       <ul>
-        <li><%= link_to 'New', new_training_path, class:"new-link" %></li>
         <li><%= "#{current_user.nickname}さんの筋トレ目標はこちら"%></li>
+        <li>新たに目標を設定する場合はこちらから→<%= link_to 'New', new_training_path, class:"new-link" %></li>
       </ul>
     </div>
   </div>
 </div>
-  <%=link_to 'TOP', root_path, class:"back-btn" %>
-  <% if @user.trainings.present? %>
-    <%= render partial: 'trainings/training', collection: @trainings %>
-  <% end %>
+    <%=link_to 'TOP', root_path, class:"back-btn" %>
+  <div class="user-publications">
+    <% if @user.trainings.present? %>
+      <%= render partial: 'trainings/training', collection: @trainings %>
+    <% end %>
+  </div>
+<%= render 'shared/footer'%>

@@ -10,8 +10,8 @@
 }
 
 .user-tables {
-
-
+  padding-top: 30px;
+  list-style-type: none;
 }
 
 .new-link {
@@ -22,28 +22,19 @@
 }
 /* 投稿のレイアウト */
 
-/* .my-page-contents {
-  padding: 0.2em 0.5em;
-  margin: 2em 0;
+.user-publications {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.my-page-contents {
+  padding: 0.5em 0.5em;
   color: #565656;
   background: #ffeaea;
   box-shadow: 0px 0px 0px 10px #ffeaea;
   border: dashed 2px #ffc3c3;
   border-radius: 8px
-} */
-
-.my-page-contents {
-  border: 1px solid black;
-  padding-bottom: 30px;
-  margin: 20px 400px;
-}
-
-.training-info {
-
-}
-
-.training-img-content {
-  position: relative;
 }
 
 .reward-img {
@@ -54,4 +45,3 @@
 .back-btn {
   text-decoration: none;
 }
-
