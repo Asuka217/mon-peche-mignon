@@ -1,6 +1,7 @@
 class AchievementsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
-  before_action :move_to_index, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_achievement, only: [:edit, :update, :destroy]
 
   def new
     @training = Training.find(params[:training_id])
@@ -17,6 +18,20 @@ class AchievementsController < ApplicationController
     end
   end
 
+  def update
+    if @achievement.update(achievement_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @achievement.destroy
+      redirect_to root_path
+    end
+  end
+
   private
 
   def achievement_params
@@ -29,4 +44,10 @@ class AchievementsController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def set_achievement
+    @training = Training.find(params[:training_id])
+    @achievement = Achievement.find(params[:id])
+  end
+
 end
