@@ -12,15 +12,28 @@
       <br>(※設定したごほうびは、各自で調達してください…)</br>
     </span>
     <div class="main-contents">
-    <%# 達成した際の公開コメントを表示させる%>
-      <div class="demo-pub">
-         <%= image_tag '/images/test_image.png', class: "demo-img" %>
-          <div class='goal-comment'>
-            達成しました〜！ごほうびのランチ❤︎
-          </div>
-      </div>
+      <%# 達成した際の公開コメントを表示させる%>
+        <div class="training-report">
+          
+            <% @trainings.each do |training| %>
+              <% if training.achievement.present? %>
+                <table class="table-top">
+                  <th class="table_col1">投稿者</th>
+                  <td class="table_col2"><%= training.user.nickname%></td>
+                  <% if training.achievement.image.present?%>
+                    <th class="table_col1">達成のごほうび</th>
+                    <td class="table_col2"><%= image_tag training.achievement.image.variant(resize: '150x150') %></td>
+                    <% if training.achievement.report.present? %>
+                      <th class="table_col1">目標</th>
+                      <td class="table_col2"><%= training.achievement.report %></td>
+                    <% end %>
+                  <% end %>
+                </table>
+              <% end %>
+            <% end %> 
+        </div>
     </div>
-  <%# 達成した際のコメント(ここまで) %>
+    <%# 達成した際のコメント(ここまで) %>
   </div>
 </body>
 

@@ -45,7 +45,7 @@ class TrainingsController < ApplicationController
   end
 
   def move_to_index
-    unless current_user.id == @training.id
+    unless current_user.id == @training.user_id
       redirect_to root_path
     end
   end

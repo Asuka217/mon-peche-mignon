@@ -1,6 +1,7 @@
 class Training < ApplicationRecord
   belongs_to :user
   has_one_attached :image
+  has_one :achievement
 
   with_options presence: true do
     validates :goal
