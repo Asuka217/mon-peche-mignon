@@ -28,11 +28,15 @@
                       <th class="table_col1">目標</th>
                       <td class="table_col2"><%= training.achievement.report %></td>
                   <% end %>
-                    <th class="table_col1">各種機能</th>
-                    <td class="table_col2">
-                      <%= link_to '修正', edit_training_achievement_path(training.id, training.achievement.id) %>
-                      <%= link_to '削除', training_achievement_path(training.id, training.achievement.id), method: :delete %>
-                    </td>
+                    <% if user_signed_in?%>
+                      <% if current_user.id == training.achievement.user_id %>
+                        <th class="table_col1">各種機能</th>
+                       <td class="table_col2">
+                          <%= link_to '修正', edit_training_achievement_path(training.id, training.achievement.id) %>
+                          <%= link_to '削除', training_achievement_path(training.id, training.achievement.id), method: :delete %>
+                        </td>
+                      <% end %>
+                    <% end %>
                 </table>
               <% end %>
             <% end %> 
