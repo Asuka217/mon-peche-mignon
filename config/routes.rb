@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "trainings#index"
 
   resources :trainings, only: [:index, :new, :create, :edit, :update, :destroy] do
-    resources :achievements, only: [:new, :create]
+    resources :achievements, only: [:new, :create, :edit, :update, :destroy]
   end
 
   resources :users, only: :show
