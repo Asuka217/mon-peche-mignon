@@ -3,46 +3,57 @@
 <body>
   <div class="top-contents">
 
-    <span class="explain">
-      <p>概要</p>
-      このサイトは、運動不足解消、このご時世で在宅になって出歩かなくなった…
-      といった、運動不足の方々への筋トレをしよう！というサイトです。
-      <br>でも、長続きしない…という皆様。</br>
-      このサイトでは、筋トレの目標を設定して、達成したら各自が設定したごほうびを獲得して達成感を喜びをわかちあいましょう！
-      <br>(※設定したごほうびは、各自で調達してください…)</br>
-    </span>
-    <div class="main-contents">
-      <%# 達成した際の公開コメントを表示させる%>
-        <div class="training-report">
-          
-            <% @trainings.each do |training| %>
-              <% if training.achievement.present? %>
-                <table class="table-top">
-                  <th class="table_col1">投稿者</th>
-                  <td class="table_col2"><%= training.user.nickname%></td>
-                  <% if training.achievement.image.present?%>
-                    <th class="table_col1">達成のごほうび</th>
-                    <td class="table_col2"><%= image_tag training.achievement.image.variant(resize: '150x150') %></td>
-                  <% end %>
-                  <% if training.achievement.report.present? %>
-                      <th class="table_col1">目標</th>
-                      <td class="table_col2"><%= training.achievement.report %></td>
-                  <% end %>
-                    <% if user_signed_in?%>
-                      <% if current_user.id == training.achievement.user_id %>
-                        <th class="table_col1">各種機能</th>
-                       <td class="table_col2">
-                          <%= link_to '修正', edit_training_achievement_path(training.id, training.achievement.id) %>
-                          <%= link_to '削除', training_achievement_path(training.id, training.achievement.id), method: :delete %>
-                        </td>
-                      <% end %>
-                    <% end %>
-                </table>
-              <% end %>
-            <% end %> 
+    <div class="box-wrapper">
+      <div class="box-inner">
+        <div class="mini-box">
+          <p>概要</p>
+          運動不足解消と健康のために筋トレをしよう！という目的でこのアプリをつくりました。
+          <br>健康やストレス解消のために、筋トレをしたいけど、長続きしない…という皆様。</br>
+          このアプリでは、筋トレの目標を設定して、達成したら各自が設定したごほうびを獲得して達成感や
+          喜びをわかちあいましょう！
+          <br>(※設定したごほうびは、各自で調達してください…)</br>
         </div>
+
+      </div>
     </div>
-    <%# 達成した際のコメント(ここまで) %>
+    <div class="title-top">
+      <h3>みんなの達成報告はこちら</h3>
+    </div>
+    <div class="card-wrapper">
+     
+      <% @trainings.each do |training| %>
+        <% if training.achievement.present? %>
+          <div class="card">
+            <%= image_tag training.achievement.image.variant(resize: '150x150'), class: :card_image if training.achievement.image.attached? %>
+            <% if training.achievement.image.blank? %>
+              <p class="card-image">
+                <%= image_tag 'image-top-demo.jpg', class:"image-demo"%>
+              </p>
+            <% end %>
+            <div class="card__body">
+              <p>
+                 投稿者：
+                <%= training.user.nickname %>
+              </p>
+              <% if training.achievement.report.present? %>   
+                <p>
+                  コメント：
+                  <div class="card-report"><%= training.achievement.report%></div>
+                </p>
+              <% end %>
+              <% if user_signed_in?%>
+                <% if current_user.id == training.achievement.user_id %>
+                  <p class="card-detail">
+                    <%= link_to '修正', edit_training_achievement_path(training.id, training.achievement.id), class:"link-top" %>
+                    <%= link_to '削除', training_achievement_path(training.id, training.achievement.id), method: :delete, class:"link-top" %>
+                  </p>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </body>
 

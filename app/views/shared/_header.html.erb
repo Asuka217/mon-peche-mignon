@@ -1,7 +1,7 @@
 <header class='top-page-header'>
   <div class='header-title'>
     <div class='app-title'>
-      <b>Mon peche mignon</b>
+      <b>Mon péché mignon</b>
     </div>
   </div>
   <div class='right-header'>
@@ -16,9 +16,7 @@
     </ul>
   </div>
   <ul class="nav">
-    <li class="content">
-      Object
-    </li>
+      <li><%= link_to 'Object', "#", class: "content" %> </li>
       <li> <%= link_to '意気込み！', "#", class: "content" %> </li>
     <% if user_signed_in? %>
       <li><%= link_to 'My page', user_path(current_user.id) , class: "content" %></li>

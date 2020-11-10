@@ -9,41 +9,39 @@
         <li>新たに目標を設定する場合はこちらから→<%= link_to 'New', new_training_path, class:"new-link" %></li>
       </ul>
     </div>
-    <div class="table-wrap">
+    <div class="card-wrapper">
       <% @trainings.each do |training| %>
         <% if training.achievement.blank? %>
-          <table class="my-page-table"> 
-            <tr>
-              <div class='myp-img-content'>
-                <th class="table_col1">ごほうび写真</th>
-                <td class="table_col2"><%= link_to image_tag(training.image, class: "myp-reward-img"), "#" %>
+          <div class="my-page-card"> 
+
+              <div class='myp-img-card'>
+                <%= link_to image_tag(training.image, class: "myp-reward-img"), "#" %>
               </div>
-            </tr>
-            <tr>
-              <div class='myp-goal'>
-                <th class="table_col1">目標</th>
-                <td class="table_col2"><%= training.goal %></td>
+
+            <div class="myp-card-body">
+              <div class='myp-goal-card'>
+                目標：
+                <%= training.goal %>
               </div>
-            </tr>
-            <tr>
-              <div class='myp-reward'> 
-                <th class="table_col1">達成したら何する？</th>
-                <td class="table_col2"><%= training.reward %></td>
+
+              <div class='myp-reward-card'> 
+                達成したら何する？：
+                <%= training.reward %>
               </div>
-            </tr>
-            <tr>
+
               <div class="myp-start">
                 <th class="table_col1">いつから始める？</th>
                 <td class="table_col2"><%= training.date_start %></td>
               </div>
-            </tr>
-            <th class="table_col1">各種機能</th>
-            <td class="table_col2">
-              <%= link_to '編集', edit_training_path(training.id) %>
-              <%= link_to '削除', training_path(training.id), method: :delete %>
-              <%= link_to '達成', new_training_achievement_path(training.id) %>
-            </td>
-          </table>
+
+              <div class="card-info">
+                各種機能
+                <%= link_to '編集', edit_training_path(training.id) %>
+                <%= link_to '削除', training_path(training.id), method: :delete %>
+                <%= link_to '達成', new_training_achievement_path(training.id) %>
+              </div>
+            </div>
+          </div>
         <% end %>
       <% end %>
     </div>

@@ -48,6 +48,7 @@
 .top-user-nickname {
   text-decoration: none;
   color: palevioletred;
+
 }
 
 .nav {
@@ -60,9 +61,17 @@
 }
 
 .content {
-  text-decoration: none;
   font-family: fantasy;
-  color: aquamarine;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-left: solid 4px #668ad8;
+  border-right: solid 4px #668ad8;
+  color: #668ad8;
+  background: #e1f3ff;
+  transition: .4s;
 }
 
 // コンテンツ部分
@@ -71,21 +80,70 @@
   padding-top: 20px;
   background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
   background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
-  height: 66vh;
-  width: 80wh;
+  margin: 0 auto;
 }
 
-.explain {
-  display: block;
-  border: 1px solid white;
-  margin: 30px;
+.box-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.mini-box {
+  padding: 8px 19px;
+  margin: 2em 800px;
+  color: #2c2c2f;
+  background: #cde4ff;
+  border-top: solid 5px #5989cf;
+  border-bottom: solid 5px #5989cf;
 }
 
 .main-contents {
+  width: 1024px;
 }
 
-.table-top {
- 
+.title-top {
+  padding: 30px 0 0 30px;
+}
+
+h3 {
+  color:#66CCCC;
+  font-size: 20px;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: calc(100vh - 400px);
+  padding-left: 20px;
+}
+
+.card {
+  width: calc((100% - 50px) / 6);
+  margin-bottom: 40px;
+  align-self: flex-start;
+  padding: 0.2em 0.5em;
+  margin: 2em 50px;
+  background: #d6ebff;
+  box-shadow: 0px 0px 0px 10px #d6ebff;
+  border: dashed 2px white;
+}
+
+
+.card_image, .image-demo {
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.image-demo {
+  width: 15wh;
+  height: 13vh; 
+}
+
+.link-top {
+  text-decoration: none;
+  color: black;
 }
 
 // コンテンツ部分(ここまで)
