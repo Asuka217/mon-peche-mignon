@@ -3,42 +3,35 @@
     <div class="user-nickname">
       <%= "#{current_user.nickname}さんのマイページ"%>
     </div>
-    <div class="user-tables">
+    <div class="user-content">
       <ul>
         <li><%= "#{current_user.nickname}さんの筋トレ目標はこちら"%></li>
         <li>新たに目標を設定する場合はこちらから→<%= link_to 'New', new_training_path, class:"new-link" %></li>
       </ul>
     </div>
-    <div class="card-wrapper">
+    <div class="card-wrapper-myp">
       <% @trainings.each do |training| %>
         <% if training.achievement.blank? %>
           <div class="my-page-card"> 
-
-              <div class='myp-img-card'>
-                <%= link_to image_tag(training.image, class: "myp-reward-img"), "#" %>
-              </div>
-
+            <%= image_tag training.image, class:"card-image-myp" %>
             <div class="myp-card-body">
               <div class='myp-goal-card'>
                 目標：
                 <%= training.goal %>
               </div>
-
               <div class='myp-reward-card'> 
                 達成したら何する？：
                 <%= training.reward %>
               </div>
-
               <div class="myp-start">
-                <th class="table_col1">いつから始める？</th>
-                <td class="table_col2"><%= training.date_start %></td>
+                いつから始める？：
+                <%= training.date_start %>
               </div>
-
               <div class="card-info">
-                各種機能
-                <%= link_to '編集', edit_training_path(training.id) %>
-                <%= link_to '削除', training_path(training.id), method: :delete %>
-                <%= link_to '達成', new_training_achievement_path(training.id) %>
+                各種機能：
+                <%= link_to '編集', edit_training_path(training.id), class:"link-top"  %>
+                <%= link_to '削除', training_path(training.id), method: :delete, class:"link-top" %>
+                <%= link_to '達成', new_training_achievement_path(training.id), class:"link-top" %>
               </div>
             </div>
           </div>
@@ -47,10 +40,13 @@
     </div>
   </div>
 </div>
-    <%=link_to 'TOP', root_path, class:"back-btn" %>
+<div class="sub-wrapper">
+  <div class="sub-title">達成済みの目標たち</div>
   <div class="user-publications">
     <% if @user.trainings.present? %>
       <%= render partial: 'trainings/training', collection: @trainings %>
     <% end %>
   </div>
+      <%=link_to '戻る', root_path, class:"back-btn" %>
+</div>
 <%= render 'shared/footer'%>

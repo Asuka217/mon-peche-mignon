@@ -1,42 +1,24 @@
 <div class="my-page-contents">
   <div class="my-page-content">
-    <table class="table">
+    <div class="sub-card">
       <% if training.achievement.present? %>
-        <tr>
-          <div class='myp-img-content'>
-            <th class="table_col1">ごほうび写真</th>
-            <td class="table_col2"><%= link_to image_tag(training.image, class: "myp-reward-img"), "#" %>
+        <div class='myp-sub-card'>
+            <%= image_tag training.image, class: "card-image-myp" %>
+          <div class='myp-card'>
+            目標：
+            <%= training.goal %>
           </div>
-        </tr>
-        <tr>
-          <div class='myp-goal'>
-            <th class="table_col1">目標</th>
-            <td class="table_col2"><%= training.goal %></td>
+          <div class='myp-card'> 
+            達成したら何する？：
+            <%= training.reward %>
           </div>
-        </tr>
-        <tr>
-          <div class='myp-reward'> 
-            <th class="table_col1">達成したら何する？</th>
-            <td class="table_col2"><%= training.reward %></td>
+          <div class="myp-card">
+            期間：
+            <%= "#{training.date_start} 〜 #{training.achievement.date_end}" %>
           </div>
-        </tr>
-        <tr>
-          <div class="myp-start">
-            <th class="table_col1">いつから始める？</th>
-            <td class="table_col2"><%= training.date_start %></td>
-          </div>
-        </tr>
-        <tr>
-          <% if training.achievement.blank?%>
-
-          <% end%>
-        </tr>
+        </div>
       <% end %>
-    </table>
-
-
-    
-
+    </div>
   </div>
 </div>
 

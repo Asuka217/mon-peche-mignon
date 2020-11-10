@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .top-page-header {
   width: 100wh;
   height: 22vh;
@@ -15,10 +19,6 @@
   font-size: 30px;
   font-family: fantasy;
   padding: 40px 0 ;
-}
-
-.right-header {
-
 }
 
 .lists {
@@ -48,7 +48,6 @@
 .top-user-nickname {
   text-decoration: none;
   color: palevioletred;
-
 }
 
 .nav {
@@ -90,8 +89,8 @@
 }
 
 .mini-box {
-  padding: 8px 19px;
-  margin: 2em 800px;
+  padding: 10px 19px;
+  margin: 5em 550px;
   color: #2c2c2f;
   background: #cde4ff;
   border-top: solid 5px #5989cf;

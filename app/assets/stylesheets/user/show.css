@@ -3,6 +3,8 @@
   justify-content: center;
   width: 100%;
   padding-top: 20px;
+  background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+  background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
 }
 
 .user-nickname {
@@ -15,51 +17,122 @@
   font-family: fantasy;
 }
 
-.user-tables {
+.user-content {
   padding-top: 30px;
   list-style-type: none;
 }
 
 
 
-.table_col1 {
-  text-align: left;
-  font-weight: bold;
-  border: 1px solid black;
-
-}
-
-.table_col2 {
-  text-align: left;
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-
-
-
 /* 投稿のレイアウト */
 
-.user-publications {
+.card-wrapper-myp {
   display: flex;
   justify-content: space-around;
-  padding: 20px;
   flex-wrap: wrap;
+  padding: 20px;
 }
 
-.my-page-contents {
-  /* padding: 0.5em 0.5em;
-  color: #565656;
-  background: #ffeaea;
-  box-shadow: 0px 0px 0px 10px #ffeaea;
-  border: dashed 2px #ffc3c3;
-  border-radius: 8px */
+.my-page-card {
+  background-color: #F6D4D8;  /* 背景色 */
+	border-radius: 5px;
+	margin: 20px 5px; /* 外側の余白 上下・左右 */
+	padding: 30px 20px 20px 20px; /* 内側の余白 上・右・下・左 */
+	position: relative;
+	z-index: 0;
 }
 
-.myp-reward-img {
-  width: 10wh;
-  height: 10vh;
+.my-page-card:before {
+  border: 1px solid #fff; /* 白い実線 */
+	border-radius: 5px;
+	content: '';
+	display: block;
+	margin: 4px;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: -1;
+}
+
+.my-page-card:after {
+  background-color: rgba(249,223,213,0.9);  /* マステ背景色 */
+	background-image: radial-gradient(#fff 20%, transparent 0), radial-gradient(#fff 20%, transparent 0); /* 水玉の色 */
+	background-position: 0 0, 8px 8px;  /* 水玉の距離 */
+	background-size: 15px 15px; /* 水玉の大きさ */
+	border-left: 2px dotted rgba(0,0,0,0.1);
+	border-right: 2px dotted rgba(0,0,0,0.1);
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	content: '現在進行中';
+	display: block;
+	padding: 5px 20px;  
+	text-align: center;
+	position: absolute;
+	top: -10px;
+	left: 20px;
+	transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-webkit-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+}
+
+.card-image-myp {
+  width: 20wh;
+  height: 20vh;
 }
 
 .back-btn {
   text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+.user-publications {
+  display: flex;
+  width: calc((100% - 50px) / 2 );
+  margin-bottom: 40px;
+  align-self: flex-start;
+}
+
+.sub-title {
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+.sub-wrapper {
+  background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+  background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+}
+
+/* 達成済みの目標 */
+
+.myp-sub-card {
+	background-color: #fff;
+	border: 2px solid #f3cbd0;
+	border-radius: 5px;
+	margin: 40px 10px 10px 20px;
+	padding: 25px 20px 10px 20px;
+	position: relative;
+}
+
+.myp-sub-card:before {
+	background-color: #ef858c;
+	border-radius: 5px;
+	color: #fff;
+	content: '完了済み';
+	padding: 5px 20px;
+	position: absolute;
+	left: -10px;
+	top: -20px;
+}
+
+.myp-sub-card:after {
+	border-top: 12px solid #ef858c;
+	border-right: 12px solid transparent;
+	border-left: 12px solid transparent;
+	content: '';
+	position: absolute;
+	top: 10px;
+	left: 15px;
 }
