@@ -36,10 +36,7 @@
                 <%= training.user.nickname %>
               </p>
               <% if training.achievement.report.present? %>   
-                <p>
-                  コメント：
-                  <div class="card-report"><%= training.achievement.report%></div>
-                </p>
+                  <div class="card-report">コメント：  <%= training.achievement.report%></div>
               <% end %>
               <% if user_signed_in?%>
                 <% if current_user.id == training.achievement.user_id %>
