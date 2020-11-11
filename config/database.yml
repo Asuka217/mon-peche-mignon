@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: mon_peche_mignon_production
-  username: mon_peche_mignon
-  password: <%= ENV['MON_PECHE_MIGNON_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
