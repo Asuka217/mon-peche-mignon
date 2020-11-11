@@ -1,0 +1,15 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       nickname: ニックネーム
+       sex_id: 性別
+       age_id: 年齢
+       figure_id: 体型
+     training:
+       goal : 目標
+       image: 画像
+       reward: ごほうび
+       date_start: 開始日
+     achievement:
+       date_end: 終了日
