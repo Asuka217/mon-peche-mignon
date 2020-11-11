@@ -135,7 +135,6 @@ h3 {
 
 .card_image, .image-demo {
   margin-bottom: 16px;
-  position: relative;
 }
 
 .image-demo {
@@ -172,7 +171,11 @@ h3 {
   }
 }
 
-@media (max-width: 599px) {
+@media (max-width: 600px) {
+  .nav {
+    width: 100%;
+  }
+
   .box-inner {
     width: 100%;
   }
@@ -181,6 +184,6 @@ h3 {
  
   }
   .card {
-    width: calc((100% - 50px) / 3);
+    width: calc((100% - 50px) / 2);
   }
 }
