@@ -172,15 +172,15 @@ h3 {
 }
 
 @media (max-width: 600px) {
-  .nav {
-    width: 100%;
+  .nav li {
+    width: 80%;
   }
 
   .box-inner {
     width: 100%;
   }
   .mini-box {
-    margin: 5em 100px;
+    margin: 10em 50px;
  
   }
   .card {
