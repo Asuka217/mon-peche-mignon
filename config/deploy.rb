@@ -3,7 +3,7 @@
 lock "~> 3.14.1"
 
 # Capistranoのログの表示に利用する
-set :mon-peche-mignon, 'ご自身のアプリケーション名'
+set :applocation, 'mon-peche-mignon'
 
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:Asuka217/mon-peche-mignon.git'
