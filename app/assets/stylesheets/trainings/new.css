@@ -93,3 +93,8 @@ padding-top: 30px;
   border: 3px double pink;
   background-color: white;
 }
+
+.new-goal-btn {
+  display: flex;
+  justify-content: center;
+}

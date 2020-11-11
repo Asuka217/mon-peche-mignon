@@ -147,6 +147,7 @@ h3 {
 
 // コンテンツ部分(ここまで)
 
+// フッター部分
 .inc {
   color: black;
   display: flex;
@@ -155,4 +156,24 @@ h3 {
   background: repeating-linear-gradient(-45deg, #fffccc, #fffccc 3px,white 3px, white 7px);
   height: 60px;
   padding-top: 20px;
+}
+
+// レスポンシブ
+
+@media (max-width: 1024px) {
+  .mini-box {
+    margin: 5em 400px;
+  }
+  .card {
+    width: calc((100% - 50px) / 3);
+  }
+}
+
+@media (max-width: 599px) {
+  .mini-box {
+    margin: 5em 100px;
+  }
+  .card {
+    width: calc((100% - 50px) / 3);
+  }
 }

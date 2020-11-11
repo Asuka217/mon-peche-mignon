@@ -14,7 +14,9 @@
           </div>
           <div class="myp-card">
             期間：
-            <%= "#{training.date_start} 〜 #{training.achievement.date_end}" %>
+            <%= training.date_start.month %>月 <%= training.date_start.day %>日
+            〜
+            <%= training.achievement.date_end.month %>月 <%= training.achievement.date_end.day%>日
           </div>
         </div>
       <% end %>
