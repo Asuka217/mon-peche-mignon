@@ -1,6 +1,6 @@
-* {
-  box-sizing: border-box;
-}
+// * {
+//   box-sizing: border-box;
+// }
 
 .top-page-header {
   width: 100wh;
@@ -173,11 +173,12 @@ h3 {
 
 @media (max-width: 600px) {
   .nav li {
-    width: 80%;
+    width: calc((100% - 50px) / 2);
   }
 
   .box-inner {
     width: 100%;
+    margin: 0 auto;
   }
   .mini-box {
     margin: 10em 50px;
