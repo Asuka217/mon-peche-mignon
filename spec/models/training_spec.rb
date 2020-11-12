@@ -13,32 +13,35 @@ RSpec.describe Training, type: :model do
     end
 
     context '筋トレの目標設定の投稿ができない場合' do
-      it 'ユーザーがログイン状態でないと、投稿ができない' do
-        
-      end
 
       it '画像選択がされていない' do
         @training.image = nil
         @training.valid?
-        expect(@training.errors.full_messages).to include("Image can't be blank")
+        expect(@training.errors.full_messages).to include("画像を入力してください")
       end
 
       it '目標設定が入力されていない' do
         @training.goal = nil
         @training.valid?
-        expect(@training.errors.full_messages).to include("Goal can't be blank")
+        expect(@training.errors.full_messages).to include("目標を入力してください")
       end
 
       it 'ごほうびの入力がされていない' do
         @training.reward = nil
         @training.valid?
-        expect(@training.errors.full_messages).to include("Reward can't be blank")
+        expect(@training.errors.full_messages).to include("ごほうびを入力してください")
       end
 
       it '開始日の日付が選択されていない' do
         @training.date_start = nil
         @training.valid?
-        expect(@training.errors.full_messages).to include("Date start can't be blank")
+        expect(@training.errors.full_messages).to include("開始日を入力してください")
+      end
+
+      it '終了予定日が入力されていない' do
+        @training.expected_date = nil
+        @training.valid?
+        expect(@training.errors.full_messages).to include("終了予定日を入力してください")
       end
     end
   end

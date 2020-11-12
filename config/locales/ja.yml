@@ -11,5 +11,6 @@ ja:
        image: 画像
        reward: ごほうび
        date_start: 開始日
+       expected_date: 終了予定日
      achievement:
        date_end: 終了日
