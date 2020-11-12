@@ -15,7 +15,7 @@ class TrainingsController < ApplicationController
   def create
     @training = Training.new(training_params)
     if @training.save
-      redirect_to root_path
+      redirect_to user_path(current_user.id)
     else
       render :new
     end
