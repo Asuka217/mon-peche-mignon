@@ -37,7 +37,7 @@ class TrainingsController < ApplicationController
   private
 
   def training_params
-    params.require(:training).permit(:goal, :reward, :date_start, :image).merge(user_id: current_user.id)
+    params.require(:training).permit(:goal, :reward, :date_start,:expected_date, :image).merge(user_id: current_user.id)
   end
 
   def set_training

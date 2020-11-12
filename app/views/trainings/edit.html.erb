@@ -25,10 +25,17 @@
         </div>
         <%= f.text_area :reward, class:"training-reward", id:"training-reward" %>
         <div class="start-time">
-          開始日を選択してください
+        筋トレを行う期間を設定してください
+        <div class="start-time">
+          いつから始めますか？
           <span class="indispensable">必須</span>
         </div>
-        <%= f.date_field :date_start, class:"training-start", id:"training-start" %>
+        <%= f.date_field :date_start, class:"training-start", id:"training-start"%>
+        <div class="start-time">
+          いつまで行いますか？
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.date_field :expected_date, class:"training-start", id:"training-start"%>
       </div>
       <%# ここまで入力フォーム %>
       <%# 送信ボタン %>

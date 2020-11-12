@@ -8,6 +8,7 @@ class Training < ApplicationRecord
     validates :reward
     validates :date_start
     validates :image
+    validates :expected_date
   end
 
 end

@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_11_06_135417) do
     t.text "goal", null: false
     t.string "reward", null: false
     t.date "date_start", null: false
+    t.date "expected_date", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

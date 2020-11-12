@@ -4,6 +4,7 @@ class CreateTrainings < ActiveRecord::Migration[6.0]
       t.text :goal,         null: false
       t.string :reward,     null: false
       t.date :date_start,   null: false
+      t.date :expected_date,null: false
       t.references :user,               foreign_key: true 
 
       t.timestamps
