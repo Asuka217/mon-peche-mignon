@@ -5,7 +5,7 @@ class Achievement < ApplicationRecord
 
   with_options presence: true do
    validates :date_end
-   validates :image
+  #  validates :image
   end
 
 end
