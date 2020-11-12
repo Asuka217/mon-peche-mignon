@@ -90,9 +90,9 @@
 
 .user-publications {
   display: flex;
-  width: calc((100% - 50px) / 2 );
   margin-bottom: 40px;
-  align-self: flex-start;
+	align-self: flex-start;
+	flex-wrap: wrap;
 }
 
 .sub-title {

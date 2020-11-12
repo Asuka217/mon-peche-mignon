@@ -44,7 +44,7 @@
       </div>
       <%# 送信ボタン %>
     </div>
-      <%=link_to '戻る', root_path, class:"back-btn" %>
+      <%=link_to '戻る', user_path(current_user.id), class:"back-btn" %>
   <% end %>
 </div>
   <%= render 'shared/footer' %>
