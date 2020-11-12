@@ -12,11 +12,6 @@ RSpec.describe Achievement, type: :model do
         expect(@achievement).to be_valid
       end
 
-      it 'imageが空でも保存はできる' do
-        @achievement.image = nil
-        expect(@achievement).to be_valid
-      end
-
       it 'reportが空でも保存はできる' do
         @achievement.report = nil
         expect(@achievement).to be_valid
@@ -29,6 +24,12 @@ RSpec.describe Achievement, type: :model do
         @achievement.date_end = nil
         @achievement.valid?
         expect(@achievement.errors.full_messages).to include("終了日を入力してください")
+      end
+
+      it 'imageが空では保存できない' do
+        @achievement.image = nil
+        @achievement.valid?
+        expect(@achievement.errors.full_messages).to include("画像を入力してください")
       end
     end
   end

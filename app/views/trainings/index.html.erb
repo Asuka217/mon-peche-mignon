@@ -19,33 +19,26 @@
     </div>
     <div class="card-wrapper">
       <% @trainings.each do |training| %>
-        <% if training.achievement.present? %>
-          <div class="card">
-            <%= image_tag training.achievement.image.variant(resize: '150x150'), class: :card_image if training.achievement.image.attached? %>
-            <% if training.achievement.image.blank? %>
-              <p class="card-image">
-                <%= image_tag 'image-top-demo.jpg', class:"image-demo"%>
-              </p>
-            <% end %>
-            <div class="card__body">
-              <p>
-                 投稿者：
-                <%= training.user.nickname %>
-              </p>
-              <% if training.achievement.report.present? %>   
+        <div class="card">
+          <% if training.achievement.present? %>
+              <%= image_tag training.achievement.image.variant(resize: '150x150'), class: :card_image %>
+              <div class="card__body">
+                <% if training.achievement.report.present? %>   
                   <div class="card-report">コメント：  <%= training.achievement.report%></div>
-              <% end %>
-              <% if user_signed_in?%>
-                <% if current_user.id == training.achievement.user_id %>
-                  <p class="card-detail">
-                    <%= link_to '修正', edit_training_achievement_path(training.id, training.achievement.id), class:"link-top" %>
-                    <%= link_to '削除', training_achievement_path(training.id, training.achievement.id), method: :delete, class:"link-top" %>
-                  </p>
                 <% end %>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
+                <% if user_signed_in? && current_user.id == training.achievement.user_id %>
+                    <p>
+                      投稿者：
+                      <%= training.user.nickname %>
+                    </p>
+                    <p class="card-detail">
+                      <%= link_to '修正', edit_training_achievement_path(training.id, training.achievement.id), class:"link-top" %>
+                      <%= link_to '削除', training_achievement_path(training.id, training.achievement.id), method: :delete, class:"link-top" %>
+                    </p>
+                <% end %>
+              </div>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>

@@ -3,6 +3,9 @@ class Achievement < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
-  validates :date_end, presence: true
+  with_options presence: true do
+   validates :date_end
+   validates :image
+  end
 
 end
