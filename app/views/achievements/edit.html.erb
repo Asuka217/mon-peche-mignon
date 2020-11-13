@@ -3,36 +3,32 @@
   <div class="form">
     <%= form_with model: @achievement, url: training_achievement_path, local: true do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
-    
       <%# 入力フォーム %>
-        <div class="new-goals">
-            <div class="end-time">
-              終了日を選択してください
-              <span class="indispensable">必須</span>
-            </div>
-            <%= f.date_field :date_end, class:"training-end", id:"training-end" %>
-            <div class="goal-title">
-              達成をみんなに知らせる！※任意
-            </div>
-            <%= f.text_area :report, class:"report-detail", id:"report-detail"%>
-            <div class="img-upload">
-              <div class="goal-title">
-                画像  ※必須
-              </div>
-
-                <%= f.file_field :image, id:"training-reward", class:"click-upload"%>
-
-            </div>
+      <div class="new-goals">
+        <div class="end-time">
+          終了日を選択してください
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.date_field :date_end, class:"training-end", id:"training-end" %>
+        <div class="goal-title">
+          達成をみんなに知らせる！※任意
+        </div>
+        <%= f.text_area :report, class:"report-detail", id:"report-detail"%>
+        <div class="img-upload">
+          <div class="goal-title">
+            画像  ※必須
+          </div>
+          <%= f.file_field :image, id:"training-reward", class:"click-upload"%>
+        </div>
             <%# ここまで入力フォーム %>
             <%# 送信ボタン %>
-          <div class="new-goal-btn">
-            <%= f.submit "報告する" ,class:"report-btn" %>
-          </div>
-          <%# 送信ボタン %>
+        <div class="new-goal-btn">
+          <%= f.submit "報告する" ,class:"report-btn" %>
         </div>
-      <% end %>
+          <%# 送信ボタン %>
+      </div>
+    <% end %>
   </div>
-      <%= link_to '戻る', user_path(current_user.id), class:"back-btn" %>
+  <%= link_to '戻る', user_path(current_user.id), class:"back-btn" %>
 </div>
-
   <%= render 'shared/footer' %>

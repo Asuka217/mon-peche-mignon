@@ -5,7 +5,7 @@ class TrainingsController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
-    @trainings = Training.all
+    @trainings = Training.all.order('created_at DESC')
   end
 
   def new

@@ -49,5 +49,4 @@ class AchievementsController < ApplicationController
     @training = Training.find(params[:training_id])
     @achievement = Achievement.find(params[:id])
   end
-
 end

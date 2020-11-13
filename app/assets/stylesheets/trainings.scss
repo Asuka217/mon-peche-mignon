@@ -52,7 +52,7 @@
 
 .nav {
   display: flex;
-
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   padding-top: 20px;
@@ -172,10 +172,6 @@ h3 {
 }
 
 @media (max-width: 600px) {
-  .nav {
-    flex-wrap: wrap;
-  }
-  
   .box-inner {
     width: 100%;
     margin: 0 auto;

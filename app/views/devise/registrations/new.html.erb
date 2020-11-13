@@ -1,53 +1,53 @@
 <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
-<div class='form-wrap'>
-  <div class='form-header'>
-    <h1 class='form-header-text'>
-      登録情報を入力してください
-    </h1>
+  <div class='form-wrap'>
+    <div class='form-header'>
+      <h1 class='form-header-text'>
+        登録情報を入力してください
+      </h1>
+    </div>
+    <%= render "devise/shared/error_messages", model: @user %>
+    <div class='form'>
+      <div class="form-text">
+        ニックネーム
+        <span class='indispensable'>入力必須</span>
+      </div>
+      <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例）kuma217", maxlength:"40"%>
+      <div class="form-text">
+        メールアドレス
+        <span class='indispensable'>入力必須</span>
+      </div>
+      <%= f.email_field :email, class:"input-default", id:"email", placeholder:"半角英数字", autofocus: true %>
+      <div class="form-text">
+        パスワード
+        <span class='indispensable'>入力必須</span>
+        <p class='info-text'>※英字と数字の両方を含めて設定してください</p>
+      </div>
+      <%= f.password_field :password, class:"input-default", id:"password", placeholder:"6文字以上の半角英数字" %>
+      <div class="form-text">
+        パスワード(再入力)
+        <span class='indispensable'>入力必須</span>
+      </div>
+      <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"パスワードを再入力" %>
+      <div class="form-text">
+        性別を選択してください
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"select-box", id:"select-sex"}) %>
+      <div class="form-text">
+        年齢を選択してください
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"select-box", id:"select-age"}) %>
+      <div class="form-text">
+        現在の体型を教えてください
+        <span class="indispensable">必須</span>
+      </div>
+        <%= f.collection_select(:figure_id, Figure.all, :id, :name, {}, {class:"select-box", id:"select-figure"}) %>
+      <div class='regist-btn'>
+        <%= f.submit "会員登録" ,class:"goal-btn" %>
+      </div>
+    </div>
   </div>
-  <%= render "devise/shared/error_messages", model: @user %>
-  <div class='form'>
-    <div class="form-text">
-      ニックネーム
-      <span class='indispensable'>入力必須</span>
-    </div>
-    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例）kuma217", maxlength:"40"%>
-    <div class="form-text">
-      メールアドレス
-      <span class='indispensable'>入力必須</span>
-    </div>
-    <%= f.email_field :email, class:"input-default", id:"email", placeholder:"半角英数字", autofocus: true %>
-    <div class="form-text">
-      パスワード
-      <span class='indispensable'>入力必須</span>
-      <p class='info-text'>※英字と数字の両方を含めて設定してください</p>
-    </div>
-    <%= f.password_field :password, class:"input-default", id:"password", placeholder:"6文字以上の半角英数字" %>
-    <div class="form-text">
-      パスワード(再入力)
-      <span class='indispensable'>入力必須</span>
-    </div>
-    <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"パスワードを再入力" %>
-    <div class="form-text">
-      性別を選択してください
-      <span class="indispensable">必須</span>
-    </div>
-    <%= f.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"select-box", id:"select-sex"}) %>
-    <div class="form-text">
-      年齢を選択してください
-      <span class="indispensable">必須</span>
-    </div>
-    <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"select-box", id:"select-age"}) %>
-    <div class="form-text">
-      現在の体型を教えてください
-      <span class="indispensable">必須</span>
-    </div>
-      <%= f.collection_select(:figure_id, Figure.all, :id, :name, {}, {class:"select-box", id:"select-figure"}) %>
-    <div class='regist-btn'>
-      <%= f.submit "会員登録" ,class:"goal-btn" %>
-    </div>
-  </div>
-</div>
 <% end %>
   <div class="return-btn">
     <%= link_to "戻る", root_path %>

@@ -3,7 +3,6 @@
   <div class="form">
     <%= form_with model: @achievement, url: training_achievements_path(@training), local: true do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
-
       <%# 入力フォーム %>
         <div class="new-goals">
           <div class="end-time">
@@ -17,7 +16,8 @@
           <%= f.text_area :report, class:"report-detail", id:"report-detail", placeholder:"達成報告" %>
           <div class="img-upload">
             <div class="goal-title">
-              画像  ※必須
+              画像
+              <span class="indispensable">必須</span>
             </div>
             <div class="click-upload">
               <%= f.file_field :image, id:"training-reward"%>
