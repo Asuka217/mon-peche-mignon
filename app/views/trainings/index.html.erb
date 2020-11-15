@@ -3,7 +3,7 @@
 <body>
   <div class="top-contents">
     <div class="box-wrapper">
-      <div class="box-inner">
+      <div class="box-inner" id="object">
         <div class="mini-box">
           <p>概要</p>
           運動不足解消と健康のために筋トレをしよう！という目的でこのアプリをつくりました。
@@ -20,7 +20,7 @@
     <div class="card-wrapper">
       <% @trainings.each do |training| %>
         <% if training.achievement.present? %>
-          <div class="card">
+          <div class="card" id="report">
             <%= image_tag training.achievement.image.variant(resize: '150x150'), class: :card_image %>
             <p>
               投稿者：

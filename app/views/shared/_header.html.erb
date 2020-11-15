@@ -7,7 +7,7 @@
   <div class='right-header'>
     <ul class='lists'>
       <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname, "#", class: "top-user-nickname" %></li>
+        <li><%= link_to current_user.nickname, user_path(current_user.id), class: "top-user-nickname" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% else %>
         <li><%= link_to 'ログイン', new_user_session_path, class:"login" %></li>
@@ -16,8 +16,8 @@
     </ul>
   </div>
   <ul class="nav">
-    <li><%= link_to 'Object', "#", class: "content" %> </li>
-    <li> <%= link_to 'comming soon...', "#", class: "content" %> </li>
+    <li><%= link_to 'Object', "#object", class: "content" %> </li>
+    <li> <%= link_to 'report', "#report", class: "content" %> </li>
     <% if user_signed_in? %>
       <li><%= link_to 'My page', user_path(current_user.id) , class: "content" %></li>
     <% end %>
