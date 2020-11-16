@@ -72,6 +72,7 @@ Mon péché mignon
 ### Association
 
 - has_many :trainings
+- has_many :achievements
 - belongs_to_active_hash :sex
 - belongs_to_active_hash :age
 - belongs_to_active_hash :figure
@@ -83,30 +84,24 @@ Mon péché mignon
 | ---------- | ---------- | ----------- |
 | goal       | text       | null: false |
 | reward     | string     | null: false |
-| date_start | date    | null: false |
+| date_start | date       | null: false |
 | user       | references | foreign_key |
 
 ### Association
 
 - belongs_to :user
 - has_one :achievement
-- belongs_to_active_hash :period
 
 
 ## achievement
 
 | Column    | Type       | Options     |
 | --------- | ---------- | ----------- |
-| result    | text       | null: false |
-| period_id | integer    | null: false |
+| report    | text       |             |
+| date_end  | date       | null: false |
 | training  | references | foreign_key |
 
 ## Association
 
 - belongs_to :training
-- belongs_to_active_hash :period
-
-
-* ローカルでの動作方法
-
-
+- belongs_to :user
