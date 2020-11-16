@@ -16,9 +16,9 @@ Mon péché mignon
 
  デプロイ先：Capistrano
  <br>URL：http://13.114.192.245/
- <br>※Basic認証を導入しています
-  <br>* ID: adminuser
-  <br>* Password: kuma1234
+ <br>※Basic認証を導入しています<br>
+ * ID: adminuser<br>
+ * Password: kuma1234
 
 # テスト用のアカウント
 
